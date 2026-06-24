@@ -40,8 +40,6 @@ public class AuthServiceImpl implements AuthService{
         if(!passwordEncoder.matches(loginRequestDto.getPassword(),userResponseDto.getEmail())){
             throw new IllegalCredentialsException("Invalid email or password");
         }
-
-
         return null;
     }
 }
