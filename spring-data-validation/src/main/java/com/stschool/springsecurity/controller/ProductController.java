@@ -20,7 +20,7 @@ import java.util.List;
 public class ProductController {
     private  final ProductService productService;
     @PostMapping("/save")
-    public ResponseEntity<ProductResponseDto> save(ProductRequestDto productRequestDto) throws ProductExistsException{
+    public ResponseEntity<ProductResponseDto> save(@RequestBody ProductRequestDto productRequestDto) throws ProductExistsException{
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(productRequestDto));
     }
     @GetMapping("/")

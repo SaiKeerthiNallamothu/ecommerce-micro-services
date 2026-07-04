@@ -19,7 +19,7 @@ import java.util.List;
 public class UserController {
     public final UserService userService;
     @PostMapping("/save")
-    public ResponseEntity<UserResponseDto> save(User user)throws  UserAlreadyExistException{
+    public ResponseEntity<UserResponseDto> save(@RequestBody User user)throws  UserAlreadyExistException{
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
     }
     @GetMapping("/email/{email}")

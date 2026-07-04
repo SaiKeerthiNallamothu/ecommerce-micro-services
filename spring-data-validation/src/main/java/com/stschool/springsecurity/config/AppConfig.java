@@ -41,7 +41,8 @@ public class AppConfig {
 
                         .requestMatchers(HttpMethod.POST,
                                 "/api/products/**")
-                        .hasRole("ADMIN")
+                        .permitAll()
+                       // .hasRole("ADMIN")
 
                         .requestMatchers(HttpMethod.PUT,
                                 "/api/products/**")

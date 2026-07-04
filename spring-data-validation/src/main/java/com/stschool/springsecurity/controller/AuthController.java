@@ -1,6 +1,7 @@
 package com.stschool.springsecurity.controller;
 
 
+import com.stschool.springsecurity.dto.AuthResponseDto;
 import com.stschool.springsecurity.dto.LoginRequestDto;
 import com.stschool.springsecurity.dto.SignupRequestDto;
 import com.stschool.springsecurity.dto.UserResponseDto;
@@ -28,7 +29,7 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.signup(signupRequestDto));
     }
     @PostMapping("/login")
-    public ResponseEntity<LoginRequestDto> login(@RequestBody LoginRequestDto loginRequestDto)throws IllegalCredentialsException, UserNotFoundException {
+    public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto loginRequestDto)throws IllegalCredentialsException, UserNotFoundException {
         return ResponseEntity.ok(authService.login(loginRequestDto));
 
     }
